@@ -4,9 +4,13 @@ import "./styles/global.css";
 import { Plus } from "react-feather";
 import styles from "./styles/pages/home.module.css";
 import { Task } from "./components/Task";
+import { CreateTaskModal } from "./components/Task/CreateTaskModal";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 function App() {
-  const [count, setCount] = useState(0);
+  const isCreatedTaskModalOpen = false;
 
   return (
     <div className="App">
@@ -20,10 +24,11 @@ function App() {
         </header>
 
         <div className={styles.tasks}>
-        <Task />
+          <Task />
         </div>
       </section>
 
+      <CreateTaskModal isOpen={isCreatedTaskModalOpen} />
     </div>
   );
 }
