@@ -4,7 +4,7 @@ import "./styles/global.css";
 import { Plus } from "react-feather";
 import styles from "./styles/pages/home.module.css";
 import { Task } from "./components/Task";
-import { CreateTaskModal } from "./components/Task/CreateTaskModal";
+import { CreateTaskModal } from "./components/CreateTaskModal";
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
