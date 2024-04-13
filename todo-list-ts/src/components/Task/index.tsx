@@ -1,17 +1,20 @@
 import { Trash } from "react-feather";
 import styles from "./styles.module.css";
+import { IComponentTaskProps } from "./types";
 
-export function Task({ task, handleToggleTask, handleRemoveTask }) {
+export function Task({ task, handleToggleTask, handleRemoveTask } : IComponentTaskProps) {
   return (
     <div className={styles.container}>
       <input
+        readOnly
+        checked={task.isCompleted}
         type="checkbox"
         className={styles.input}
         onClick={() => {
           handleToggleTask(task);
         }}
       />
-      <label>task.title</label>
+      <label className={task.isCompleted ? styles.completed : ''}>task.title</label>
       <div className={styles.buttonsWrapper}>
         <button
           type="button"
