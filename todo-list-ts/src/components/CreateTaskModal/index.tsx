@@ -2,12 +2,13 @@ import { X } from "react-feather";
 import Modal from "react-modal";
 import styles from "./styles.module.css";
 
-export function CreateTaskModal(isOpen) {
+export function CreateTaskModal({ isOpen, onRequestClose }) {
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      ovelayClassName="react-modal-overlay"
+      overlayClassName="react-modal-overlay"
+      className={styles.container}
     >
       <button
         type="button"
@@ -17,13 +18,13 @@ export function CreateTaskModal(isOpen) {
         <X size={16} />
       </button>
       <h1>Adicionar tarefa</h1>
-      <form onSubmit={handleCreateNewTask}>
+      <form>
         <label htmlFor="task">Título da tarefa</label>
         <input
           type="text"
           name="task"
           placeholder="Digite aqui..."
-          value={newTask}
+          value=""
         />
         <button type="submit" className={styles.button}>
           Adicionar
